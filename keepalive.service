@@ -1,0 +1,9 @@
+[Unit]
+Description=Keep VPS Alive
+
+[Service]
+ExecStart=/bin/bash -c 'while true; do curl -s https://google.com > /dev/null; sleep 300; done'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
